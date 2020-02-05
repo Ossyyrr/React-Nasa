@@ -1,7 +1,26 @@
 import axios from 'axios';
+//require('dotenv').config();
 
-const baseUrl =`https://api.nasa.gov/planetary/apod?api_key=94ftHHW76UIZyPMSQOH1p8SBgiUR63RKChpT80rv&date=2020-02-01&hd=true`;
+const API_KEY = '94ftHHW76UIZyPMSQOH1p8SBgiUR63RKChpT80rv';
+let date = '2020-02-01';  //@TODO conectar con componente fecha
+const URL =`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${date}&hd=true`;
 
-  API_KEY = '94ftHHW76UIZyPMSQOH1p8SBgiUR63RKChpT80rv';
+function formatData(data) {
 
-  //TODO: quitar variables de baseUrl cuando funcione.
+  const { date, title, explanation, url, hdurl } = data;
+
+  return {
+    date,
+    title,
+    explanation,
+    url,
+    hdurl
+  };
+}
+
+export async function getImageToday() {
+
+  const { data } = await axios.get(URL);
+  console.log(formatData(data));
+  return formatData(data);
+}

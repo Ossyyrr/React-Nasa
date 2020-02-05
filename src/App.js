@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -7,7 +8,9 @@ import {
 } from "react-router-dom";
 
 import ImagenToday from './containers/ImagenToday';
+import {getImageToday} from './services/imagenTodayApi';
 
+getImageToday();
 
 function App() {
   return (
