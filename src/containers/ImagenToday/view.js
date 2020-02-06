@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from 'react';
 
-import FetchDate from '../FetchDate';
+
+import FetchDate from '../../components/FetchDate';
 import ImageCard from '../../components/ImageCard';
 
 function ImagenToday ({date, setDate}){
+    const [data, setData] = useState({})
+
+
+    console.log(data);
+   
     return(
         <>
         <h2>Soy el contenedor ImagenToday</h2>
@@ -13,8 +19,8 @@ function ImagenToday ({date, setDate}){
         <p>Un cajón de comentarios que se almacenen en un array y se muestren debajo</p>
 
         <h3>Importo componentes:</h3>
-        <FetchDate date={date} setDate={setDate}></FetchDate>
-        <ImageCard  date={date}></ImageCard>
+        <FetchDate date={date} setDate={setDate} setData={setData}></FetchDate>
+        <ImageCard  data={data}></ImageCard>
 
         </>
     )

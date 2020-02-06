@@ -1,24 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+//import PropTypes from 'prop-types';
+import {getImageByDate} from '../../services/imagenTodayApi'; 
 
 
-function FetchDate({date, setDate}) {
+function FetchDate({date, setDate, setData}) {
   
   
-  /*const [date, setDate] = useState('');  //tiene una fecha minima sin datos y fecha maxima de hoy
+  useEffect(()=>{
+    async function fetchImagentodayData() {
+        const data = await getImageByDate(date);
+        setData(data)
+    }
+    fetchImagentodayData()
+},[date])
 
-  useEffect(() => {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0');
-    let yyyy = today.getFullYear();
 
-    today = yyyy + '-' + mm + '-' + dd;
-    setDate(today);
-  }, []);*/
-
-  console.log(date);
- 
   
   function handleOnChange(e) {
     setDate(e.target.value);

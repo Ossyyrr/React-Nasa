@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import ImagenToday from "../../components/ImagenToday";
+import ImagenToday from "../ImagenToday";
 
 function Home(){
 
-    const [date, setDate] = useState('');  //tiene una fecha minima sin datos y fecha maxima de hoy
+    const [date, setDate] = useState('');  
 
     useEffect(() => {   //para que actualice a fecha de hoy al montar el componente
       let today = new Date();
@@ -13,7 +13,7 @@ function Home(){
       let yyyy = today.getFullYear();
   
       today = yyyy + '-' + mm + '-' + dd;
-      setDate(today);
+      setDate(today); //@TODO tiene una fecha minima sin datos y fecha maxima de hoy
     }, []);
 
 

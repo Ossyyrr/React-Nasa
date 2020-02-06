@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-
-import {getImageDate} from '../../services/imagenTodayApi';
+import React from 'react';
+//import PropTypes from 'prop-types';
 
 
-function ImageCard({date}){
 
-    console.log(getImageDate(date));
-    
+function ImageCard({data}){
+const {dateImg, title, explanation, url, hdurl} = data;   //@TODO   Boton bajo la imagen para imagen en HD (hdurl)
+
+
+console.log(title)
+
 
     return <>
-    <h2>Soy el componente ImageCard</h2>
-    <p>tengo que intentar coger la imagen de las props</p>
-    <p>La fecha que me llega por props es {date}</p>
+    <h2>Soy el componente ImageCard:</h2>
+    <h2>{title}</h2>
+    <img src={url}></img>
+    <p>{explanation}</p>
+
     </> 
 }
 
