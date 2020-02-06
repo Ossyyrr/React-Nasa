@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import {getImageByDate} from '../../services/imagenTodayApi'; 
 
 import FetchDate from '../../components/FetchDate';
 import ImageCard from '../../components/ImageCard';
@@ -8,7 +9,13 @@ function ImagenToday ({date, setDate}){
     const [data, setData] = useState({})
 
 
-    console.log(data);
+    async function fetchImagentodayData() {
+        const data = await getImageByDate(date);
+        setData(data);
+    }
+
+
+   //fetch será, para cada contenedor, la función que buscará en cada api!!!
    
     return(
         <>
@@ -19,7 +26,7 @@ function ImagenToday ({date, setDate}){
         <p>Un cajón de comentarios que se almacenen en un array y se muestren debajo</p>
 
         <h3>Importo componentes:</h3>
-        <FetchDate date={date} setDate={setDate} setData={setData}></FetchDate>
+        <FetchDate fetch={fetchImagentodayData} date={date} setDate={setDate} ></FetchDate>
         <ImageCard  data={data}></ImageCard>
 
         </>

@@ -1,24 +1,20 @@
 import React, { useEffect } from 'react';
 //import PropTypes from 'prop-types';
-import {getImageByDate} from '../../services/imagenTodayApi'; 
+
+function FetchDate({ date, setDate, fetch }) {
 
 
-function FetchDate({date, setDate, setData}) {
-  
-  
-  useEffect(()=>{
-    async function fetchImagentodayData() {
-        const data = await getImageByDate(date);
-        setData(data)
-    }
-    fetchImagentodayData()
-},[date])
+  useEffect(() => { //los datos se tienen q recoger en el componente principal
+    fetch();
+  }, [date]);
 
 
-  
+
   function handleOnChange(e) {
     setDate(e.target.value);
   }
+
+
 
   return (
     <>
@@ -29,8 +25,10 @@ function FetchDate({date, setDate, setData}) {
       </p>
       <input type="date" value={date} onChange={handleOnChange}></input>
       <p>date: {date}</p>
-      <p>voy a importar un componente dentro de fetchDate (más tarde haré un router en este componente para diferenciar entre sus componentes hijos)</p>
-     
+      <p>
+        voy a importar un componente dentro de fetchDate (más tarde haré un
+        router en este componente para diferenciar entre sus componentes hijos)
+      </p>
     </>
   );
 }

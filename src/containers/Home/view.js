@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import ImagenToday from "../ImagenToday";
+import Curiosity from '../Curiosity/view';
 
 function Home(){
 
@@ -16,11 +17,11 @@ function Home(){
       setDate(today); //@TODO tiene una fecha minima sin datos y fecha maxima de hoy
     }, []);
 
-
+//@TODO Hay que poner un router en este return
     return <><h1>HOME</h1>
     <p>Hay que poner el link a curiosity en el boton dentro de home</p>
     <ImagenToday date={date} setDate={setDate}></ImagenToday>
-    
+    <Curiosity></Curiosity>
     </>
 }
 
