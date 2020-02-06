@@ -7,7 +7,6 @@ function formatData(data) {
   
 
 
-  console.log(process.env.REACT_APP_API_KEY);
   const { date, title, explanation, url, hdurl } = data;
 
   return {
@@ -21,5 +20,6 @@ function formatData(data) {
 
   export async function getImageByDate(date) {
     const { data } = await axios.get(`${URL}&date=${date}`);
+    console.log(data)
     return formatData(data);
   }

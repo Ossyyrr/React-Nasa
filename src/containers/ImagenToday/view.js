@@ -26,7 +26,7 @@ function ImagenToday ({date, setDate}){
         <p>Un cajón de comentarios que se almacenen en un array y se muestren debajo</p>
 
         <h3>Importo componentes:</h3>
-        <FetchDate fetch={fetchImagentodayData} date={date} setDate={setDate} ></FetchDate>
+        <FetchDate fetchImg={fetchImagentodayData} date={date} setDate={setDate} ></FetchDate>
         <ImageCard  data={data}></ImageCard>
 
         </>
