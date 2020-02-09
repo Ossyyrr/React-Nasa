@@ -1,0 +1,23 @@
+html{
+    
+/* Ancho */::-webkit-scrollbar {width: 4px;height: 4px;}
+/* Pista */::-webkit-scrollbar-track {background: white; }
+/* Barrita */::-webkit-scrollbar-thumb {background: rgb(255, 198, 55); }
+/* Barrita hover */ ::-webkit-scrollbar-thumb:hover {background: #bbb;width: 7px;height: 7px; }
+/* Barrita active */ ::-webkit-scrollbar-thumb:active {background: goldenrod;width: 7px;height: 7px; }
+}
+
+.Home{
+    &__title{
+        width: calc(100vw - 7px);
+
+    }
+    &__link{
+        display: flex;
+        flex-direction: row;
+        img{
+            width: 15rem;
+            height: 15rem;
+            margin:1rem;
+        }
+    }}

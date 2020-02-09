@@ -9,7 +9,7 @@ import CuriosityList from '../../components/CuriosityList/view';
 
 function Curiosity(){
    const [data, setData] = useState([{}])
-   const [date, setDate] = useState('2012-08-07');  
+   const [date, setDate] = useState('2012-08-08');  
 
 
    async function fetchCuriosityData() {

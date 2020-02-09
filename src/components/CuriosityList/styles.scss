@@ -1,0 +1,18 @@
+.CuriosityList {
+    &__list {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 2rem;
+    }
+  }
+
+  .CuriosityException{
+    &__message{
+      margin: 5rem;
+      text-align: center;
+    }
+  }
+  

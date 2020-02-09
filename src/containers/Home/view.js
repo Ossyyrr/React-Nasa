@@ -5,8 +5,12 @@ import {
   Route,
    Link,
 } from "react-router-dom";
+import "./styles.scss";
+
 import ImagenToday from "../ImagenToday";
 import Curiosity from '../Curiosity/view';
+import todayFront from '../../assets/images/today.png'
+import curiosityFront from '../../assets/images/curiosity.PNG'
 
 function Home(){
 
@@ -22,14 +26,15 @@ function Home(){
       setDate(today); //@TODO tiene una fecha minima sin datos y fecha maxima de hoy
     }, []);
     
-   /* <ImagenToday date={date} setDate={setDate}></ImagenToday>
-    <Curiosity date={date} setDate={setDate}></Curiosity>*/
-//@TODO Hay que poner un router en este return
-    return <><h1>HOME</h1>
-    < Link to='/imagetoday'>Imagetoday  </ Link>
-    < Link to='/curiosity'>  Curiosity</ Link>
-    <p>Hay que poner el link a curiosity en el boton dentro de home</p>
 
+    return <><h1>HOME</h1>
+    <section className="Home__title">
+      <h1>Welcome to my application on React about NASA images</h1>
+    </section>
+    <section className="Home__link">
+    < Link to='/imagetoday'> <img src={todayFront} alt='Space Today' />  </ Link>
+    < Link to='/curiosity'> <img src={curiosityFront} alt='Curiosity' />  </ Link>
+    </section>
     <Router>
       <Switch>
         <Route exact path="/imagetoday" render={(props) => <ImagenToday {...props} date={date} setDate={setDate} />} />

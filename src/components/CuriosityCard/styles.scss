@@ -1,0 +1,11 @@
+.CuriosityCard{
+    &__card img{
+        height: 40vh;
+        width: 40vh;
+        border: 1px solid black;
+        border-radius: 0.25rem;
+        list-style-type: none;
+        margin: 1rem;
+        padding-left: 0;
+    }
+}
