@@ -30,7 +30,7 @@ estimated_diameter_max,
 asteroides que han pasado desde una fecha.
 
 
-ROBER CURIOSITY
+ROVERS CURIOSITY
 https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=94ftHHW76UIZyPMSQOH1p8SBgiUR63RKChpT80rv
 Earth date:
 https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DEMO_KEY

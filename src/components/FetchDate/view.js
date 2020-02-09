@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 //import PropTypes from 'prop-types';
+import "./styles.scss";
+
 
 function FetchDate({ date, setDate, fetchImg }) {
 
@@ -18,7 +20,6 @@ function FetchDate({ date, setDate, fetchImg }) {
 
   return (
     <>
-      <h2>Soy el componente FetchDate</h2>
       <input type="date" value={date} onChange={handleOnChange}></input>
       <p>date: {date}</p>
    

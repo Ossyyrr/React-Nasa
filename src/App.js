@@ -13,7 +13,7 @@ import Home from './containers/Home';
 function App() {
   return (
   <Router>
-    <h2>TITULO EJEMPLO en app.js </h2>
+    <nav>poner links a space today y curiosity fixed y pequeñitos</nav>
     <Switch>
       <Route path="/" component={Home} />
 

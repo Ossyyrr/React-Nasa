@@ -4,12 +4,9 @@ import "./styles.scss";
 function CuriosityCard({id, sol, img, camera}){
 
 
-
-//const { /*id,*/ img, camera, sol } = data;
-
 return <>
-    <li className="CuriosityCard__card">
-        <h4>{camera}</h4>
+    <li key={id} className="CuriosityCard__card" >
+        <h4>Cámera {camera}</h4>
         <img src={img} alt={camera} />
     </li>
 

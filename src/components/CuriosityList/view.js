@@ -11,8 +11,7 @@ console.log(data)
 
 if (data[0]){
 return <>
-<h2>Soy el componente CuriosityList</h2>
-    <h3>Imágenes tomadas en el sol {data[0].sol}</h3>
+<h2>Imágenes tomadas por el Rovers Curiosity en el sol {data[0].sol}</h2>
     <ul className="CuriosityList__list">
         {data.map(card => (
             <CuriosityCard key={card.id} {...card}></CuriosityCard>
@@ -20,7 +19,7 @@ return <>
     </ul>
     </>
 }
-return <h2 className="CuriosityException__message">The Robers Curiosity landed on Mars on 2012-08-06. <br/> He died on 09-28-2019 because of a sandstorm. <br/> Not every day photos were taken.</h2>
+return <h2 className="CuriosityException__message">The Rovers Curiosity landed on Mars on 2012-08-06. <br/> He died on 09-28-2019 because of a sandstorm. <br/> Not every day photos were taken.</h2>
 }
 
 

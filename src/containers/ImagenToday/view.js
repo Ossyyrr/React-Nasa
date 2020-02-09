@@ -21,12 +21,9 @@ function ImagenToday ({date, setDate}){
         <>
         <section>
         <h2>Soy el contenedor ImagenToday</h2>
-        <h3>Aquí se mostrarán los componenetes de la imagen del día de la nasa</h3>
-        <p>Selector de fecha que haga la petición a la api (FetchDate)</p>
-        <p> la imagen junto con la descripción</p>
-        <p>Un cajón de comentarios que se almacenen en un array y se muestren debajo</p>
+ 
+        <p>quizas añadir cajón de comentarios que se almacenen en un array y se muestren debajo</p>
 
-        <h3>Importo componentes:</h3>
         <FetchDate fetchImg={fetchImagentodayData} date={date} setDate={setDate} ></FetchDate>
         <div className="ImageCard__card">
         <ImageCard  data={data}></ImageCard>
