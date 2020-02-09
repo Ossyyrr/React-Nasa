@@ -1,15 +1,16 @@
 import React from 'react';
 
-function CuriosityCard({data}){
+function CuriosityCard({id, sol, img, camera}){
 
-console.log(data)
 
-const { /*id,*/ img, camera, sol } = data;
 
-return <><h2>Soy el componente CuriosityCard</h2>
-<h2>Imagen del curiosity en el sol {sol} tomada con la cámara {camera}</h2>
-<img src={img} ></img>
+//const { /*id,*/ img, camera, sol } = data;
 
+return <>
+    <li>
+        <h4>{camera}</h4>
+        <img src={img} alt={camera} />
+    </li>
 
     </>
 }
