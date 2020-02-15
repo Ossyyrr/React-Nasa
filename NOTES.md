@@ -43,3 +43,6 @@ https://www.netlify.com/
 
 CHART.JS - graficas
 https://www.chartjs.org/docs/latest/charts/line.html
+
+generator colors
+https://coolors.co/69ddff-96cdff-d8e1ff-dbbadd-be92a2

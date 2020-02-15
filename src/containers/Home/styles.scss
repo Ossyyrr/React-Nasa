@@ -14,15 +14,22 @@ align-items: center;
 
 body{
     font-family: 'Noto Serif', serif;
+    color:rgb(37, 37, 37);
+    
 }
 
 .Home{
     &__title{
-        width: calc(100vw - 7px);
+        display: flex;
+        align-items: center;
+        h1{
+            width: 90vw;
+        }
     }
     &__link{
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         &__div{
             padding: 0 0 5rem 0;
             width: 15rem;
@@ -43,7 +50,10 @@ body{
                 object-fit: cover;
                 filter: contrast(1.4);
             }
-      
+        }
+        a{
+            text-decoration: none;
+            color:rgb(65, 65, 65);
         }
   
         img:hover  {

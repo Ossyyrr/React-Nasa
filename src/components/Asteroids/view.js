@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import Graph from '../../components/Graph/view';
 
 
-function Asteroids({ data }) {
-  const { count, asteroids } = data;
+function Asteroids({ data, danger }) {
+  const { count } = data;
+  
+  /*const { count, asteroids} = data;
+  
 
   let danger;
   if (asteroids) {
     danger = (asteroids.filter(asteroid => asteroid.is_potentially_hazardous_asteroid === true).length );
-  }
+  }*/
 
   return (
     <section>
@@ -19,8 +21,7 @@ function Asteroids({ data }) {
       <h3>
         {danger ? `${danger} of which are potentially dangerous` : ''}
       </h3>
-
-      <Graph data={data}/>
+     
     </section>
   );
 }

@@ -1,76 +1,83 @@
-import React, {Component, useState} from 'react';
-import "./styles.scss";
-import { Line, Bar } from 'react-chartjs-2'
+import React from 'react';
+import './styles.scss';
+import { Bar, Line } from 'react-chartjs-2';
+
+function Graph( { data , date}) {
+  console.log(data.count);
+  console.log(date)
+
+ 
+ 
+  //Bar graph
+  let max = [];
+  let min = [];
+  let name = [];
+  let isDanger = [];
+  let colorsMax = [];
+  let colorsMin = [];
 
 
-function Graph ({ data}){
 
-    console.log(data)
-    let max = [];
-    let min = [];
-    let name = [];
+  function formatData(data) {
+    if (data.asteroids) {
+      const { asteroids } = data;
+      max = asteroids.map(
+        el => el.estimated_diameter.kilometers.estimated_diameter_max
+      );
 
-function formatData(data){    
-    if(data.asteroids){
-    const {asteroids} = data;
-    max = asteroids.map(
-        (el) => (el.estimated_diameter.kilometers.estimated_diameter_max)
-    );
+      min = asteroids.map(
+        el => el.estimated_diameter.kilometers.estimated_diameter_min
+      );
 
-    min = asteroids.map(
-        (el) => (el.estimated_diameter.kilometers.estimated_diameter_min)
-    );
-    name = asteroids.map(
-        (el) => (el.name)
-    );
-   
+      name = asteroids.map(el => el.name);
 
-}
-}
+      isDanger = asteroids.map(el => el.is_potentially_hazardous_asteroid);
 
-formatData(data);
-/*
-function formatData(data ,date) {
-const {element_count} = data;
-const asteroids = data.near_earth_objects[date];
-return {
-  count: element_count,
-  asteroids
-};
-}
-*/
-
-
- const state={
-        data: {
-            labels: name,
-            datasets: [
-                {
-                    //stack: 'together',
-                    label: "estimated_diameter_min_km",
-                    backgroundColor: "blue",
-                    data: min
-                }, {
-                    //stack: 'together',
-                    label: "estimated_diameter_max_km",
-                    backgroundColor: "yellow",
-                    data: max
-                }
-            ]
-        }
+      isDanger.forEach(e => {
+        e ? colorsMax.push('#D22730') : colorsMax.push('#96CDFF');
+        e ? colorsMin.push('#FE5F55') : colorsMin.push('#D8E1FF');
+      });
     }
-   
+  }
 
+  formatData(data);
 
-    return( 
-        <div>
-        <h2>Number of time......TITULO LALALLALALADSFADSFADSFSADFASD ASDF ASDFA</h2>
-        <Bar 
-       
-        data = {state.data}
-        />
+  const diameter = {
+    data: {
+      labels: name,
+      datasets: [
+        {
+          //stack: 'together',
+          label: 'maximum diameter (km)',
+          backgroundColor: colorsMax,
+
+          data: max,
+        },
+        {
+          //stack: 'together',
+          label: 'Minimum diameter (km)',
+          backgroundColor: colorsMin,
+          data: min,
+        },
+        {
+          //stack: 'together',
+          label: '(potentially hazardous)',
+          backgroundColor: '#D22730',
+          data: [0, 0, 0, 0],
+        },
+      ],
+    },
+  };
+
+  return (
+    <div className="Graph__container">
+      <h2>
+        Maximum and minimum size in km of each of the asteroids for the given
+        date
+      </h2>
+      <Bar data={diameter.data} />
     </div>
-    )
+  );
 }
 
 export default Graph;
