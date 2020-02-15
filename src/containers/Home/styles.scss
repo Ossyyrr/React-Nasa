@@ -12,6 +12,10 @@ justify-content: center;
 align-items: center;
 }
 
+body{
+    font-family: 'Noto Serif', serif;
+}
+
 .Home{
     &__title{
         width: calc(100vw - 7px);

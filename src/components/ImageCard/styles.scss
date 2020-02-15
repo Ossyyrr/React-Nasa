@@ -1,0 +1,28 @@
+.ImageCard{
+    &__container{
+     img{ 
+         width: calc( 100vw - 7px);
+         margin-bottom: 10rem;
+     }
+    }
+    &__description{
+        width: calc( 100vw - 7px);
+        min-height: 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        p{
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.794);
+            top: -13rem;
+            width: 80vw;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 1px 1px 5px rgb(163, 163, 163);
+            transition: 1s;
+            &:hover{
+                transform: translateY(-15vh);
+            }
+        }
+    }
+}

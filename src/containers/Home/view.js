@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
@@ -17,10 +18,12 @@ function Home(){
 
     //States
     const [date, setDate] = useState(''); 
-   const [cacheCuriosity, setCacheCuriosity] = useState({})
-   const [cacheAsteroids, setCacheAsteroids] = useState([{}])
-   const [cacheImagetoday, setCacheImagetoday] = useState({})
+    const [today, setToday] = useState(''); 
+    const [cacheCuriosity, setCacheCuriosity] = useState({})
+    const [cacheAsteroids, setCacheAsteroids] = useState([{}])
+    const [cacheImagetoday, setCacheImagetoday] = useState({})
     
+
     
 
 
@@ -31,11 +34,13 @@ function Home(){
       let yyyy = today.getFullYear();
   
       today = yyyy + '-' + mm + '-' + dd;
-      setDate(today); //@TODO tiene una fecha minima sin datos y fecha maxima de hoy
+      setDate(today); 
+      setToday(today);
     }, []);
     
 
     return <>
+
     <section className="Home__title">
       <h1>Welcome to my application on React about NASA images</h1>
     </section>
@@ -46,7 +51,7 @@ function Home(){
     </section>
    
       <Switch>
-        <Route exact path="/imagetoday" render={(props) => <ImagenToday {...props} date={date} setDate={setDate} cacheImagetoday={cacheImagetoday} setCacheImagetoday={setCacheImagetoday} />} />
+        <Route exact path="/imagetoday" render={(props) => <ImagenToday {...props} today={today} date={date} setDate={setDate} cacheImagetoday={cacheImagetoday} setCacheImagetoday={setCacheImagetoday} />} />
         <Route exact path="/curiosity" render={(props) => <Curiosity {...props} cacheCuriosity={cacheCuriosity} setCacheCuriosity={setCacheCuriosity} />} />
         <Route exact path="/asteroid" render={(props) => <Asteroid {...props} date={date} setDate={setDate} cacheAsteroids={cacheAsteroids} setCacheAsteroids={setCacheAsteroids} />}  />
       </Switch>

@@ -1,21 +1,17 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-
+import "./styles.scss";
 
 
 function ImageCard({data}){
 const {/*dateImg,*/ title, explanation, url, /*hdurl*/} = data;   //@TODO   Boton bajo la imagen para imagen en HD (hdurl)
 
-
-
-
-    return <>
-    <h2>Soy el componente ImageCard:</h2>
+    return <div className="ImageCard__container">
     <h2>{title}</h2>
     <img src={url} alt={title}></img>
+    <div className="ImageCard__description">
     <p>{explanation}</p>
-
-    </> 
+    </div>
+    </div>
 }
 
 

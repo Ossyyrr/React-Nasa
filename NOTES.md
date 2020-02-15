@@ -36,3 +36,9 @@ Earth date:
 https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DEMO_KEY
 landing_date: "2012-08-06"
 max_date: "2019-09-28"
+
+
+NETLIFY
+https://www.netlify.com/
+
+CHART.JS - graficas

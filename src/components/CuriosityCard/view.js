@@ -5,7 +5,7 @@ function CuriosityCard({id, sol, img, camera}){
 
 
 return <>
-    <li key={id} className="CuriosityCard__card" >
+    <li className="CuriosityCard__card" >
         <h4>Cámera {camera}</h4>
         <img src={img} alt={camera} />
     </li>

@@ -11,7 +11,7 @@ return <>
 <p>A sun is every day on Mars (a return of Mars on its own axis. The suns are counted since the Rovers landed</p>
     <ul className="CuriosityList__list">
         {data.map(card => (
-            <CuriosityCard key={card.id} {...card}></CuriosityCard>
+            <CuriosityCard key={card.id + 'id'} {...card} />
         ))}
     </ul>
     </>

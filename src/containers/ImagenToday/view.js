@@ -5,16 +5,20 @@ import "./styles.scss";
 import FetchDate from '../../components/FetchDate';
 import ImageCard from '../../components/ImageCard';
 
-function ImagenToday ({date, setDate, cacheImagetoday, setCacheImagetoday}){
+function ImagenToday ({date, setDate, cacheImagetoday, setCacheImagetoday, today}){
     const [data, setData] = useState({})
 
-/*
+    /*
     async function fetchImagentodayData() {
         const data = await getImageByDate(date);
         setData(data);
         console.log(data)
     }*/
 
+    let dateIsValid = true;
+    if (date>today){
+        dateIsValid= false;
+    }
 
     async function fetchImagentodayData() {
 
@@ -33,22 +37,17 @@ function ImagenToday ({date, setDate, cacheImagetoday, setCacheImagetoday}){
          console.log(cacheData)
         }
  }
- 
-
-
-   //fetch será, para cada contenedor, la función que buscará en cada api!!!
    
     return(
-        <>
-        <section>
-     
- 
-
-        <FetchDate fetchImg={fetchImagentodayData} date={date} setDate={setDate} ></FetchDate>
-        <div className="ImageCard__card">
-        <ImageCard  data={data}></ImageCard>
-        </div>
-        </section>
+        <> 
+            <FetchDate fetchImg={fetchImagentodayData} date={date} setDate={setDate} ></FetchDate>
+            {dateIsValid? 
+            <section className="ImagenToday__container">
+                
+                    <ImageCard  data={data}></ImageCard>
+              
+            </section> 
+            : <h2> The image of the day can only be displayed until {today} </h2>}
         </>
     )
 }

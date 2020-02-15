@@ -26,14 +26,14 @@ function Asteroid({date, setDate, cacheAsteroids, setCacheAsteroids}){
         let  cacheData = {...cacheAsteroids, [date]:data}
     
         setCacheAsteroids(cacheData)
-        console.log(cacheData)
+        console.log(data)
        }
 }
 
  
     return<> 
     <FetchDate fetchImg={fetchAsteroidData} date={date} setDate={setDate} ></FetchDate>
-    <Asteroids data={data}></Asteroids>
+    {data?  <Asteroids data={data}></Asteroids> : <h2>No data this day</h2>}
     </>
 }
 
