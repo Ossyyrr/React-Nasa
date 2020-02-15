@@ -42,3 +42,4 @@ NETLIFY
 https://www.netlify.com/
 
 CHART.JS - graficas
+https://www.chartjs.org/docs/latest/charts/line.html

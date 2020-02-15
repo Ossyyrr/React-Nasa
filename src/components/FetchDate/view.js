@@ -18,12 +18,9 @@ function FetchDate({ date, setDate, fetchImg }) {
 
 
 
-  return (
-    <>
-      <input type="date" value={date} onChange={handleOnChange}></input>
-      <p>date: {date}</p>
-   
-    </>
+  return ( <input className="FetchDate__container" type="date" value={date} onChange={handleOnChange}></input>
+  
+
   );
 }
 

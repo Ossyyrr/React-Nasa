@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FetchDate from '../../components/FetchDate';
 import Asteroids from '../../components/Asteroids';
 import {getImageByDate} from '../../services/asteroidApi';
+import Graph from '../../components/Graph/view';
 
 function Asteroid({date, setDate, cacheAsteroids, setCacheAsteroids}){
     const [data, setData] = useState({})
@@ -33,7 +34,8 @@ function Asteroid({date, setDate, cacheAsteroids, setCacheAsteroids}){
  
     return<> 
     <FetchDate fetchImg={fetchAsteroidData} date={date} setDate={setDate} ></FetchDate>
-    {data?  <Asteroids data={data}></Asteroids> : <h2>No data this day</h2>}
+    {data? <> <Asteroids data={data} />
+    <Graph /> </>: <h2>No data this day</h2>}
     </>
 }
 
