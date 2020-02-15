@@ -1,37 +1,72 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import "./styles.scss";
 import { Line, Bar } from 'react-chartjs-2'
 
 
-function Graph (){
+function Graph ({ data}){
+
+    console.log(data)
+    let max = [];
+    let min = [];
+    let name = [];
+
+function formatData(data){    
+    if(data.asteroids){
+    const {asteroids} = data;
+    max = asteroids.map(
+        (el) => (el.estimated_diameter.kilometers.estimated_diameter_max)
+    );
+
+    min = asteroids.map(
+        (el) => (el.estimated_diameter.kilometers.estimated_diameter_min)
+    );
+    name = asteroids.map(
+        (el) => (el.name)
+    );
+   
+
+}
+}
+
+formatData(data);
+/*
+function formatData(data ,date) {
+const {element_count} = data;
+const asteroids = data.near_earth_objects[date];
+return {
+  count: element_count,
+  asteroids
+};
+}
+*/
+
 
  const state={
         data: {
-            labels: ["1", "2", "3", "4", "5"],
+            labels: name,
             datasets: [
                 {
-                    stack: 'together',
-                    label: "videos",
+                    //stack: 'together',
+                    label: "estimated_diameter_min_km",
                     backgroundColor: "blue",
-                    data: [5,1,11,24,46,32]
+                    data: min
                 }, {
-                    stack: 'together',
-                    label: "videos",
+                    //stack: 'together',
+                    label: "estimated_diameter_max_km",
                     backgroundColor: "yellow",
-                    data: [6,1,11,24,46,32]
+                    data: max
                 }
-             
             ]
         }
     }
+   
 
 
     return( 
         <div>
-        <h2>Number of time......TITULO</h2>
+        <h2>Number of time......TITULO LALALLALALADSFADSFADSFSADFASD ASDF ASDFA</h2>
         <Bar 
-        options = {[
-        ]}
+       
         data = {state.data}
         />
     </div>
