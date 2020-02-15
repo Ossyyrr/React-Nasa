@@ -19,43 +19,30 @@ align-items: center;
     &__link{
         display: flex;
         flex-direction: row;
-        position: relative;
         &__div{
+            padding: 0 0 5rem 0;
             width: 15rem;
             height: 15rem;
             margin:1rem;
             transition: .5s;
+            border-radius: 5px 5px 20px 20px;
+            box-shadow: 0 5px 10px rgba(0,0,0,.3);
+            background-color: rgb(246, 246, 246);
             &:hover{
-                transform: scale(1.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,.5);
+            transform: scale(.9);
             }
             img{
+                border-radius: 5px 5px 0 0;
                 width: 15rem;
                 height: 15rem;
-    
                 object-fit: cover;
                 filter: contrast(1.4);
-                
-             
-               
             }
-            h3 {
-                position: absolute;
-                top:1.5rem;
-                width: 15rem;
-                color: rgb(255, 255, 255);
-                transform: translateY(10rem);
-                transition: .4s;
-            }
+      
         }
-        &__mascara{
-            background-color: rgb(238, 255, 0);
-            width: 15rem;
-            height: 15rem;
-            margin:1rem;
-            z-index: 2;
-        }
-        img:hover + h3 {
-            transform: translateY(0rem);               
-
+  
+        img:hover  {
+            top: 1.5rem;
         }
     }}

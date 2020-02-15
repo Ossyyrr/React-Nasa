@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {getImageByDate} from '../../services/imagenTodayApi'; 
+import {getImageByDate} from '../../services/imageTodayApi'; 
 import "./styles.scss";
 
 import FetchDate from '../../components/FetchDate';
@@ -20,9 +20,8 @@ function ImagenToday ({date, setDate}){
     return(
         <>
         <section>
-        <h2>Soy el contenedor ImagenToday</h2>
+     
  
-        <p>quizas añadir cajón de comentarios que se almacenen en un array y se muestren debajo</p>
 
         <FetchDate fetchImg={fetchImagentodayData} date={date} setDate={setDate} ></FetchDate>
         <div className="ImageCard__card">
