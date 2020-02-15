@@ -3,16 +3,7 @@ import CuriosityCard from '../CuriosityCard/view';
 import "./styles.scss";
 
 
-function CuriosityList({data, cache}){
-
-console.log(data)
-console.log('cache:')
-console.log(cache)
-
-
-
-
-//const { /*id,*/ img, camera, sol } = data;
+function CuriosityList({data}){
 
 if (data[0]){
 return <>

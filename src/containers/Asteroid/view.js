@@ -6,12 +6,12 @@ import {getImageByDate} from '../../services/asteroidApi';
 function Asteroid({date, setDate, cacheAsteroids, setCacheAsteroids}){
     const [data, setData] = useState({})
 
-    async function fetchAsteroidData() {
+    /*async function fetchAsteroidData() {
         const data = await getImageByDate(date);
         setData(data);
-    }
+        console.log(data)
+    }*/
 
-/*
    async function fetchAsteroidData() {
 
        if(cacheAsteroids[date]){  
@@ -29,7 +29,7 @@ function Asteroid({date, setDate, cacheAsteroids, setCacheAsteroids}){
         console.log(cacheData)
        }
 }
-*/
+
  
     return<> 
     <FetchDate fetchImg={fetchAsteroidData} date={date} setDate={setDate} ></FetchDate>

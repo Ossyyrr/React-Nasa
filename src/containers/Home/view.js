@@ -18,7 +18,8 @@ function Home(){
     //States
     const [date, setDate] = useState(''); 
    const [cacheCuriosity, setCacheCuriosity] = useState({})
-   const [cacheAsteroids, setCacheAsteroids] = useState({})
+   const [cacheAsteroids, setCacheAsteroids] = useState([{}])
+   const [cacheImagetoday, setCacheImagetoday] = useState({})
     
     
 
@@ -45,7 +46,7 @@ function Home(){
     </section>
    
       <Switch>
-        <Route exact path="/imagetoday" render={(props) => <ImagenToday {...props} date={date} setDate={setDate} />} />
+        <Route exact path="/imagetoday" render={(props) => <ImagenToday {...props} date={date} setDate={setDate} cacheImagetoday={cacheImagetoday} setCacheImagetoday={setCacheImagetoday} />} />
         <Route exact path="/curiosity" render={(props) => <Curiosity {...props} cacheCuriosity={cacheCuriosity} setCacheCuriosity={setCacheCuriosity} />} />
         <Route exact path="/asteroid" render={(props) => <Asteroid {...props} date={date} setDate={setDate} cacheAsteroids={cacheAsteroids} setCacheAsteroids={setCacheAsteroids} />}  />
       </Switch>

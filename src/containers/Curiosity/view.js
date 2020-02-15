@@ -4,8 +4,6 @@ import {getImageByDate} from '../../services/curiosityApi';
 import FetchDate from '../../components/FetchDate';
 import CuriosityList from '../../components/CuriosityList/view';
 
-
-
 function Curiosity({cacheCuriosity,setCacheCuriosity}){
    const [data, setData] = useState([{}])
    const [date, setDate] = useState('2012-08-08');  
@@ -27,15 +25,12 @@ function Curiosity({cacheCuriosity,setCacheCuriosity}){
         setCacheCuriosity(cacheData)
         console.log(cacheData)
        }
-
 }
 
 
-//if(cache[date].length)
-
     return <> 
     <FetchDate fetchImg={fetchCuriosityData} date={date} setDate={setDate} ></FetchDate>
-    <CuriosityList data={data} cache={cacheCuriosity}></CuriosityList>
+    <CuriosityList data={data}></CuriosityList>
     </>
 }
 
