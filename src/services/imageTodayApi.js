@@ -15,6 +15,9 @@ function formatData(data) {
 }
 
 export async function getImageByDate(date) {
-  const { data } = await axios.get(`${URL}&date=${date}`);
-  return formatData(data);
+ 
+    const { data } = await axios.get(`${URL}&date=${date}`);
+    return formatData(data);
+ 
 }
+

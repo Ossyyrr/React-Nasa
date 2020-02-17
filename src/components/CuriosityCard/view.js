@@ -1,15 +1,20 @@
 import React from 'react';
-import "./styles.scss";
+import './styles.scss';
 
-function CuriosityCard({id, sol, img, camera}){
+import galaxia from '../../assets/images/galaxia.svg'
 
 
-return <>
-    <li className="CuriosityCard__card" >
+function CuriosityCard({ img, camera }) {
+  return (
+    <>
+      <li className="CuriosityCard__card">
         <h4>Cámera {camera}</h4>
-        <img src={img} alt={camera} />
-    </li>
-
+        <div className="CuriosityCard__img">
+          {img?<img src={img} alt={camera} />:
+         <div  className="CuriosityCard__loading" > <img src={galaxia} alt='Loading' /></div>}
+        </div>
+      </li>
     </>
+  );
 }
 export default CuriosityCard;

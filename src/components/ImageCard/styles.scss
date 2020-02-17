@@ -1,28 +1,57 @@
-.ImageCard{
-    &__container{
-     img{ 
-         width: calc( 100vw - 7px);
-         margin-bottom: 10rem;
-     }
+$imgsize: 50rem;
+
+.ImageCard {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h2 {
+      padding: 1rem;
     }
-    &__description{
-        width: calc( 100vw - 7px);
-        min-height: 20px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        p{
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.794);
-            top: -13rem;
-            width: 80vw;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 1px 1px 5px rgb(163, 163, 163);
-            transition: 1s;
-            &:hover{
-                transform: translateY(-15vh);
-            }
-        }
+  }
+  &__img {
+    width: 80vw;
+    max-width: $imgsize;
+    margin-bottom: 10rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:  0px 0px 10px  rgb(87, 87, 87);
+    border-radius: 20px;
+
+    img {
+      transition: 1s;
+      width: $imgsize;
+      object-fit: cover;
+      filter: contrast(120%);
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
+  }
+  &__description {
+    width: calc(100vw - 7px);
+    min-height: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    p {
+      position: absolute;
+      line-height: 2rem;
+      background-color: rgba(255, 255, 255, 0.842);
+      top: -9rem;
+      width: 80vw;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 1px 1px 5px rgb(163, 163, 163);
+      transition: 1s;
+      &:hover {
+        top: -25rem;
+        font-size: 18px;
+      }
+    }
+  }
 }

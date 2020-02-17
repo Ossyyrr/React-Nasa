@@ -9,8 +9,13 @@ return data
 }
 
   export async function getImageByDate(date) {
-    const { data } = await axios.get(`${URL}&earth_date=${date}`);
-    return formatData(data)
+    try{
+
+      const { data } = await axios.get(`${URL}&earth_date=${date}`);
+      return formatData(data)
+    }catch(e){
+      console.log(e.message)
+    }
   }
 
   

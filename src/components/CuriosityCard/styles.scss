@@ -1,17 +1,71 @@
-.CuriosityCard{
-    &__card img{
-        height: 40vh;
-        width: 40vh;
-        border-radius: 0.25rem;
-        list-style-type: none;
-        margin: 1rem;
-        padding-left: 0;
-        box-shadow: 2px 2px 3px grey;
-        transition: 1s;
-        &:hover{
-            z-index: 2;
-            box-shadow: 0 0 0  transparent;
-            transform: scale(1.1);
+$imgsize: 20rem;
+$imgsizeMobile: 10rem;
+
+.CuriosityCard {
+  &__card {
+      position: relative;
+      margin: 1.5rem;
+      overflow: hidden;
+      &:hover h4{
+          
+          z-index: 2;
+          right: 1rem;
+          
         }
+        h4 {
+            right: -10rem;
+            bottom: 0;
+            transition:1s;
+            color:white;
+            text-shadow: 0px 0px 1px black,1px 1px 1px black,1px 1px 1px black ;
+        position: absolute;
     }
+  }
+  &__img {
+    height: $imgsize;
+    width: $imgsize;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 799px) {
+        height: $imgsizeMobile;
+        width: $imgsizeMobile;
+      }
+    img {
+      width: $imgsize;
+      height: $imgsize;
+      @media screen and (max-width: 799px) {
+        height: $imgsizeMobile;
+        width: $imgsizeMobile;
+      }
+      object-fit: cover;
+      filter: contrast(120%);
+      border-radius: 0.25rem;
+      list-style-type: none;
+      box-shadow: 2px 2px 3px grey;
+      transition: 1s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  &__loading{
+    overflow: hidden;
+    border-radius: 50%;
+    animation:spin 4s linear infinite;
+    box-shadow: 0 0 0 white;
+    img{
+      transform: scale(1.2);
+    }
+  }
+}
+
+@keyframes spin { 
+  from { 
+      transform: rotate(0deg); 
+  } to { 
+      transform: rotate(360deg); 
+  }
 }

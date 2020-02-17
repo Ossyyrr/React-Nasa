@@ -1,13 +1,14 @@
 import React from 'react';
 import './styles.scss';
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
-function Graph( { data , date}) {
+function Graph({ data, date }) {
   console.log(data.count);
-  console.log(date)
+  console.log(date);
 
- 
- 
+
+console.log('rerender Graph')
+
   //Bar graph
   let max = [];
   let min = [];
@@ -15,8 +16,6 @@ function Graph( { data , date}) {
   let isDanger = [];
   let colorsMax = [];
   let colorsMin = [];
-
-
 
   function formatData(data) {
     if (data.asteroids) {
@@ -47,23 +46,20 @@ function Graph( { data , date}) {
       labels: name,
       datasets: [
         {
-          //stack: 'together',
           label: 'maximum diameter (km)',
           backgroundColor: colorsMax,
 
           data: max,
         },
         {
-          //stack: 'together',
           label: 'Minimum diameter (km)',
           backgroundColor: colorsMin,
           data: min,
         },
         {
-          //stack: 'together',
           label: '(potentially hazardous)',
           backgroundColor: '#D22730',
-          data: [0, 0, 0, 0],
+          data: [0],
         },
       ],
     },
@@ -75,9 +71,9 @@ function Graph( { data , date}) {
         Maximum and minimum size in km of each of the asteroids for the given
         date
       </h2>
-      <Bar data={diameter.data} />
+      <Bar className="Graph__bar" data={diameter.data} />
     </div>
   );
 }
 
-export default Graph;
+export default  React.memo(Graph) ;

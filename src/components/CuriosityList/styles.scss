@@ -1,4 +1,8 @@
 .CuriosityList {
+  &__container{
+    padding: 2rem;
+    width: 90vw
+  }
     &__list {
       display: flex;
       align-items: flex-start;

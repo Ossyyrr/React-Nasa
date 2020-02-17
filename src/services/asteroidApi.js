@@ -16,9 +16,13 @@ return {
 }
 
   export async function getImageByDate(date) {
-    const { data } = await axios.get(`${URL}&start_date=${date}&end_date=${date}`);
-    let near = data.near_earth_objects;
-    return (formatData(data,date))
+    try{
+
+      const { data } = await axios.get(`${URL}&start_date=${date}&end_date=${date}`);
+      return (formatData(data,date))
+    }catch(e){
+      console.log(e.message);
+    }
   }
 
   

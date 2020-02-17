@@ -1,4 +1,11 @@
 .Graph{
     &__container{
         max-width: 90vw;
-}}
+        @media screen and (max-width: 590px) {
+           display: none;
+          }
+}
+&__bar{
+    min-height: 50vh;
+}
+}
